@@ -84,7 +84,7 @@ def patch_veiculo(
             return veiculo_service.patch(db, veiculo_id, payload)
         except ValueError as exc:
             raise HTTPException(
-                status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+                status_code=status.HTTP_422_UNPROCESSABLE_CONTENT,
                 detail={"code": "VALIDATION_ERROR", "message": str(exc)},
             ) from exc
 
