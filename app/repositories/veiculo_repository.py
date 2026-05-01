@@ -1,17 +1,16 @@
-from __future__ import annotations
-
 from decimal import Decimal
-
 from sqlalchemy import Select, func, select
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
-
 from app.core.errors import VehiclePlateConflict
 from app.models.veiculo import Veiculo
 from app.schemas.veiculo import SortDirection, SortField
 
 
 class VeiculoRepository:
+    """
+    Repositório de veículos.
+    """
     sortable_fields = {
         "marca": Veiculo.marca,
         "modelo": Veiculo.modelo,

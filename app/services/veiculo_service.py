@@ -1,9 +1,5 @@
-from __future__ import annotations
-
 from decimal import Decimal, ROUND_HALF_EVEN
-
 from sqlalchemy.orm import Session
-
 from app.core.errors import NotFoundError, VehiclePlateConflict
 from app.models.veiculo import Veiculo
 from app.repositories.veiculo_repository import veiculo_repository
