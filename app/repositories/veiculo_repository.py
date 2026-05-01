@@ -54,7 +54,7 @@ class VeiculoRepository:
             consulta = consulta.where(Veiculo.preco_usd <= max_preco)
         return consulta
 
-    def list(
+    def list_veiculos(
         self,
         db: Session,
         marca: str | None = None,

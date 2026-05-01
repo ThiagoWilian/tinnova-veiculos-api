@@ -53,7 +53,7 @@ class VeiculoService:
         )
         return veiculo_repository.create(db, veiculo)
 
-    def list(
+    def list_veiculos(
         self,
         db: Session,
         marca: str | None,
@@ -66,7 +66,7 @@ class VeiculoService:
         sort_by: SortField,
         sort_dir: SortDirection,
     ) -> tuple[list[Veiculo], int]:
-        return veiculo_repository.list(
+        return veiculo_repository.list_veiculos(
             db, marca, ano, cor, min_preco, max_preco, page, size, sort_by, sort_dir
         )
 

@@ -33,7 +33,7 @@ def list_veiculos(
     sort_dir: SortDirection = "desc",
     db: Session = Depends(get_db),
     ) -> VeiculoPage:
-        items, total = veiculo_service.list(
+        items, total = veiculo_service.list_veiculos(
             db, marca, ano, cor, min_preco, max_preco, page, size, sort_by, sort_dir
         )
         return VeiculoPage(items=items, page=page, size=size, total=total)

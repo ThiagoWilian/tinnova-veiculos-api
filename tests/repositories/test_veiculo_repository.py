@@ -21,7 +21,7 @@ def test_repository_filters_and_unique_plate(db_session: Session) -> None:
         ),
     )
 
-    items, total = veiculo_repository.list(
+    items, total = veiculo_repository.list_veiculos(
         db_session,
         marca="Toyota",
         ano=2022,
@@ -62,7 +62,7 @@ def test_repository_soft_delete_hides_vehicle(db_session: Session) -> None:
     veiculo.ativo = False
     veiculo_repository.save(db_session, veiculo)
 
-    items, total = veiculo_repository.list(db_session)
+    items, total = veiculo_repository.list_veiculos(db_session)
 
     assert total == 0
     assert items == []
